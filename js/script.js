@@ -63,8 +63,11 @@ switch (addStudentPrompt) {
 //print properties for every class34 student object
 for (var i = 0; i < class34.length; i++) {
     var student = class34[i];
+    //student number h3
+    var studentList = document.getElementById("studenti").innerHTML += "<h3>Studente #" + (i + 1) + "</h3>";
+    //student data in li
     for (var key in student) {
-        console.log(key + ": " + student[key]);
+        studentList.innerHTML += "<li>" + key + ": " + student[key] + "</li>";
     }
 }
 
