@@ -50,7 +50,10 @@ switch (addStudentPrompt) {
         do {
             newStudentPush(class34);
             var anotherStudent = anotherPrompt();
-        } while (anotherStudent);                
+        } while (anotherStudent);
+        if (!anotherStudent) {
+            alert("Arrivederci!");
+        }
         break;
     case "n" :
     case "no":
@@ -100,14 +103,7 @@ function anotherPrompt() {
         continuePrompt = prompt("Aggiungere un altro? S/N").toLowerCase().trim();
     }
 
-    if (continuePrompt == "s" || continuePrompt == "si") {
-        var valid = true;
-    } else {
-        var valid = false;
-        alert("Arrivederci!")
-    }
-
-    return valid;
+    return (continuePrompt == "s" || continuePrompt == "si");
 }
 
 //string validation ,returs true if string contains only italian alphabet letters
