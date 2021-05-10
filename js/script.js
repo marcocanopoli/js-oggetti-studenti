@@ -64,7 +64,8 @@ switch (addStudentPrompt) {
 for (var i = 0; i < class34.length; i++) {
     var student = class34[i];
     //student number h3
-    var studentList = document.getElementById("studenti").innerHTML += "<h3>Studente #" + (i + 1) + "</h3>";
+    var studentList = document.getElementById("studenti");
+    studentList.innerHTML += "<h3>Studente #" + (i + 1) + "</h3>";
     //student data in li
     for (var key in student) {
         studentList.innerHTML += "<li>" + key + ": " + student[key] + "</li>";
@@ -99,7 +100,14 @@ function anotherPrompt() {
         continuePrompt = prompt("Aggiungere un altro? S/N").toLowerCase().trim();
     }
 
-    return (continuePrompt == "s" || continuePrompt == "si");
+    if (continuePrompt == "s" || continuePrompt == "si") {
+        var valid = true;
+    } else {
+        var valid = false;
+        alert("Arrivederci!")
+    }
+
+    return valid;
 }
 
 //string validation ,returs true if string contains only italian alphabet letters
