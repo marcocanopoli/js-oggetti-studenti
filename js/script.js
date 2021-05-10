@@ -50,8 +50,7 @@ switch (addStudentPrompt) {
         do {
             newStudentPush(class34);
             var anotherStudent = anotherPrompt();
-        } while (anotherStudent);
-                
+        } while (anotherStudent);                
         break;
     case "n" :
     case "no":
@@ -94,7 +93,7 @@ function newStudentPush(array){
 function anotherPrompt() {
     var continuePrompt = "";
     while (continuePrompt == "") {  
-        continuePrompt = prompt("Vuoi aggiungere un altro studente alla classe? S/N").toLowerCase().trim();
+        continuePrompt = prompt("Aggiungere un altro? S/N").toLowerCase().trim();
     }
 
     return (continuePrompt == "s" || continuePrompt == "si");
@@ -103,7 +102,7 @@ function anotherPrompt() {
 //string validation ,returs true if string contains only italian alphabet letters
 function ITLettersOnly(word) {
     var valid;
-    if (!/[^a-zA-Zàèéìòóù]/.test(word)) {
+    if (!/[^a-zA-Zàèéìòóù' ]/.test(word)) {
         valid = true;
     }else {
         alert("Hai inserito caratteri diversi da lettere! Reinserire");
