@@ -102,10 +102,10 @@ function anotherPrompt() {
 //string validation ,returs true if string contains only italian alphabet letters
 function ITLettersOnly(word) {
     var valid;
-    if (!/[^a-zA-Zàèéìòóù' ]/.test(word)) {
+    if (!/[^a-zA-Zàèéìòóù' ]/.test(word) && word != "") {
         valid = true;
     }else {
-        alert("Hai inserito caratteri diversi da lettere! Reinserire");
+        alert("Hai inserito caratteri non validi! Reinserire");
         valid = false;
     }
     return valid;
